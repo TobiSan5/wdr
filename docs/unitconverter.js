@@ -1,5 +1,5 @@
 function keyify(text_str){
-  text_str = "".toLowerCase(text_str)
+  text_str = text_str.toLowerCase()
   text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "_");
   return text_str;  
 };
