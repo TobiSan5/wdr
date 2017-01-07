@@ -1,25 +1,24 @@
 function keyify(text_str){
-  text_str = text_str.toLowerCase()
+  text_str = "".toLowerCase(text_str)
   text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "_");
   return text_str;  
 };
 
-var unitArray = {};
-unitArray["m"]["m2spa_kg"] = 1.95e-10
+var unitArray = {'m': {'m2spa_kg': 1.95e-10
+     }};
 
 
 $(document).ready(function(){
-    $("#calc_button").click(function() {
-     	var val = +$("#value").val();
-     	var i_unit = +$("#inp_unit").val();
-		  var o_unit = +$("#out_unit").val();
-      var ikey = keyify(i_unit);
-      var okey = keyify(o_unit);
+  $("#calc_button").click(function() {
+    var val = +$("#value").val();
+    var i_unit = +$("#inp_unit").val();
+    var o_unit = +$("#out_unit").val();
+    var ikey = keyify(i_unit);
+    var okey = keyify(o_unit);
     var res = val * unitArray[okey][ikey]
-		$("#result").val(res);
-		$("#res_unit").val(okey);
-		}
-	);
+    $("#result").val(res);
+    $("#res_unit").val(o_unit);
+  });
 });		
 
 /* No work..

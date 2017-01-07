@@ -1,21 +1,28 @@
-/*
- * This is a JavaScript Scratchpad.
- *
- * Enter some JavaScript, then Right Click or choose from the Execute Menu:
- * 1. Run to evaluate the selected text (Ctrl+R),
- * 2. Inspect to bring up an Object Inspector on the result (Ctrl+I), or,
- * 3. Display to insert the result in a comment after the selection. (Ctrl+L)
- */
-
 function keyify(text_str){
+  text_str = text_str.toLowerCase()
   text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "_");
-/*  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/, "_");
-  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/, "_");
-  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/, "_"); */
-  return text_str;
-  
+  return text_str;  
 };
 
-res = keyify("kg/(msPa)");
 
-$("#res_unit").val(res);
+$(document).ready(function(){
+    $("#calc_button").click(function() {
+      var unitArray = {};
+      unitArray.m = {};
+      unitArray.m.m2spa_kg = 1.95e-10
+     	var val = +$("#value").val();
+     	var i_unit = +$("#inp_unit").val();
+		  var o_unit = +$("#out_unit").val();
+      var ikey = keyify(i_unit);
+      var okey = keyify(o_unit);
+    var res = val * unitArray[okey][ikey]
+		$("#result").val(res);
+		$("#res_unit").val(okey);
+		}
+	);
+});		
+
+/*
+Exception: TypeError: unitArray.m is undefined
+@Scratchpad/3:8:1
+*/
