@@ -2,7 +2,20 @@
 <html>
 	<head>
 		<title>Unit Converter</title>
-	</head>
+		<link rel="stylesheet" href="style.css">		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+$(document).ready(function(){
+    $("#calc_button").click(function() {
+     	var val = +$("#value").val();
+     	var i_unit = +$("#inp_unit").val();
+		var o_unit = +$("#out_unit").val();
+		$("#result").val(val);
+		}
+	);
+});		
+		</script>
+		</head>
 	
 	<body>
 		
@@ -26,9 +39,9 @@
 				<section>
 				<h3>Input</h3>
 					<label for="value">Input value</label>
-					<input id="value" type="text" />
+					<input id="value" type="text" class="input value"/>
 					<label for="inp_unit">Select input value unit</label>
-					<select id="inp_unit">
+					<select id="inp_unit" class="input unit1">
 						<option value="m2sPa/kg">m2sPa/kg</option>
 						<option value="m2sGPa/kg">m2sGPa/kg</option>
 						<option value="m2hPa/g">m2hPa/g</option>
@@ -48,20 +61,50 @@
 				<section>
 				<h3>Output</h3>
 					<label for="out_unit">Select desired output value</label>
-					<select>
+					<select id="out_unit" class="input unit2">
 						<option value="m">m (S_d-value)</option>
 						<option value="m2sPa/kg">m2sPa/kg (Z_p-value)</option>
 						<option value="kg/(m2sPa)">kg/(m2sPa) (W_p-value)</option>
 						<option value="kg/(msPa)">kg/(msPa) (delta_p-value)</option>
 					</select>
+					<button id="calc_button" type="button">Calculate</button>
+          <input type="text" disabled="disabled" id="result">
 				</section>
 			</form>
 			
 		</article>
 		
 		<footer>
+			<br />
+			<p>-----------<br />
 		    Our Pricacy Policy: You're highly respected<br />
+			</p>
 		</footer>
-	</body>
+	</body>	
+
 	
-	
+<!-- No work..
+function funcCalc(jQuery, val, i_unit, o_unit)
+{
+  var value = document.getElementById('value').value;
+  var  inp_unit = document.getElementById('inp_unit').value; 
+  var out_unit = document.getElementById('out_unit').value;
+  var unitArray = {};
+  unitArray.m.m2sPa_kg = 1.95e-10
+  i_unit = i_unit.replace("/", "_");
+  o_unit = o_unit.replace("/", "_");
+  return unitArray[o_unit][i_unit] * 
+}
+
+$(document).ready(function(){
+    $(".calc_button").click(
+    function(){
+          var val = +$(".value").val();
+          var i_unit = +$(".inp_unit").val();
+          var o_unit = +$(".out_unit").val();
+          var res = funcCalc(val, i_unit, o_unit);
+          Alert(res);
+          $("#result").val(res);
+   });
+});
+-->
