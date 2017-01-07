@@ -5,6 +5,22 @@
 		<link rel="stylesheet" href="style.css">		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="unitconverter.js"></script>
+		<script>
+			function runConvert() {
+				var p1 = $("#value").val()
+				var p2 = $("#inp_unit").val()
+				var p3 = $("#out_unit").val()
+				var res = p1 * unitArray[keyify(p3)][keyify(p2)]
+				$("#result").val(res)
+				$("#res_unit").val(p3)
+			};
+
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					runConvert(); 
+				});
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -29,7 +45,7 @@
 				<section>
 				<h3>Input</h3>
 					<label for="value">Input value<br /></label>
-					<input id="value" type="text" />
+					<input id="value" type="text" name="value"/>
 					<label for="inp_unit"><br />Select input value unit<br /></label>
 					<select id="inp_unit" >
 						<option value="m2sPa/kg">m2sPa/kg</option>
@@ -58,7 +74,8 @@
 						<option value="kg/(msPa)">kg/(msPa) (delta_p-value)</option>
 					</select>
 					<button id="btn1" type="button">Calculate</button><br />
-					<input type="text" disabled="disabled" id="result">
+					<label for="result">Calculated value<br /></label>
+					<input type="text" disabled="disabled" id="result" name="result">
 					<input type="text" disabled="disabled" id="res_unit">
 				</section>
 			</form>
