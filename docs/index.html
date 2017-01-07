@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>WDR Home</title>
+	<!-- --------------------------------------------------------------------------------------------------------- -->
         <script>
 function allowDrop(ev) {
     ev.preventDefault();
@@ -17,71 +18,26 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 }
         </script>
+	<!-- --------------------------------------------------------------------------------------------------------- -->
 	</head>
-	<body bgcolor="#i3a959">
+	<!-- --------------------------------------------------------------------------------------------------------- -->
+	<body>
 		<header>
-		    <h1><font color="white">
-		        This is a header!</font>
-		    </h1>
+		    <h1>Welcom to the WDR project!</h1>
 		</header>
+	<!-- --------------------------------------------------------------------------------------------------------- -->	
 		<nav>
-		    <p>Link menu<br />------------<br /></p>
+		    <p>Link menu<br />-------------<br /></p>
 		    <ul>
-		        <li><a href="#">Some link here</a></li>
+		        <li><a href="sandbox.html">Sandbox</a> - page for experimenting with html</li>
+				<li><a href="unitconverter.html">Unit Converter</a> - page for converting between different units</li>
 		    </ul>
 		</nav>
+	<!-- --------------------------------------------------------------------------------------------------------- -->		
 		<article>
-		    <h1>Header for this article</h1>
+		    <h1>Default header for article</h1>
 		    
-		    <!-- Gotta try SVG on-site -->
-		    <svg width="1000" height="1000">
-                <ellipse cx="200" cy="100" rx="150" ry="70" style="fill:cyan" />
-                <rect width="300" height="100" x="20" y="20" fill="green" />     
-                <polygon points="100 100, 200 200, 300 0" 
-                style="fill: yellow; stroke:black;" 
-                />
-                <circle cx="80" cy="80" r="50" fill="purple" />
-                <line x1="10" y1="10" x2="200" y2="100" 
-                style="stroke:#000000; stroke-linecap:round; stroke-width:20"  
-                />
-                <polyline style="stroke-linejoin:miter; stroke:black; 
-                stroke-width:12; fill: none;"
-                points="100 100, 150 150, 200 100" 
-                />
-        </svg>
-            
-        <svg width="1000" height="1000">
-                <rect width="150" height="150" fill="orange">
-                  <animate attributeName="x" from="0" to="300"
-                    dur="3s" fill="freeze" repeatCount="2" /> 
-                  <animate attributeName="y" from="0" to="50"
-                    dur="3s" fill="freeze" repeatCount="2"/> 
-                </rect>
-                <rect width="150" height="150" fill="orange">
-                  <animate attributeName="x" from="299" to="0"
-                    dur="3s" fill="freeze" repeatCount="2" /> 
-                  <animate attributeName="y" from="49" to="0"
-                    dur="3s" fill="freeze" repeatCount="2"/> 
-                </rect>
-        </svg>            
-            
-            <!-- Testing canvas with JS -->
-            <canvas id="canvas1" 
-               width="400" height="300"></canvas> 
-        
-           <script>
-              var can = document.getElementById("canvas1"); 
-              var ctx = can.getContext("2d");
-              var i;
-              for (i=0; i<256; i++) {
-                setTimeout(function() {
-                    ctx.fillStyle ="rgba(100, i, 100, 1)";
-                    ctx.fillRect (36, i/10, 22, 22);
-                }, (3 * 100))
-              }
-           </script>
-            
-            
+		<!-- --------------------------------------------------------------------------------------------------------- -->
 		    <aside>
 		        <p>Other, but related content</p>
 		        <!--
@@ -102,9 +58,12 @@ function drop(ev) {
                 navigator.geolocation.getCurrentPosition();
 		        -->
 		    </aside>
+		<!-- --------------------------------------------------------------------------------------------------------- -->
 		</article>
+	<!-- --------------------------------------------------------------------------------------------------------- -->
 		<footer>
 		    Our Pricacy Policy: You're highly respected<br />
 		</footer>
+	<!-- --------------------------------------------------------------------------------------------------------- -->
 	</body>
 </html>
