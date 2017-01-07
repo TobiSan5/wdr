@@ -4,12 +4,15 @@ function keyify(text_str){
   return text_str;  
 };
 
-var unitArray = {'m': {'m2spa_kg': 1.95e-10
-     }};
+var unitArray = {
+  'm': {
+    'm2spa_kg': 1.95e-10
+   }
+};
 
 
 $(document).ready(function(){
-  $("#calc_button").click(function() {
+  $("#btn1").click(function() {
     var val = +$("#value").val();
     var i_unit = +$("#inp_unit").val();
     var o_unit = +$("#out_unit").val();

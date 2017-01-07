@@ -4,7 +4,7 @@
 		<title>Unit Converter</title>
 		<link rel="stylesheet" href="style.css">		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="unitconverter.js"></script>
+		<script src="unitconverter.js"></script>
 	</head>
 	
 	<body>
@@ -28,9 +28,9 @@
 				<h2>The converter form</h2>
 				<section>
 				<h3>Input</h3>
-					<label for="value">Input value</label>
+					<label for="value">Input value<br /></label>
 					<input id="value" type="text" />
-					<label for="inp_unit">Select input value unit</label>
+					<label for="inp_unit"><br />Select input value unit<br /></label>
 					<select id="inp_unit" >
 						<option value="m2sPa/kg">m2sPa/kg</option>
 						<option value="m2sGPa/kg">m2sGPa/kg</option>
@@ -57,7 +57,7 @@
 						<option value="kg/(m2sPa)">kg/(m2sPa) (W_p-value)</option>
 						<option value="kg/(msPa)">kg/(msPa) (delta_p-value)</option>
 					</select>
-					<button id="calc_button" type="button">Calculate</button><br />
+					<button id="btn1" type="button">Calculate</button><br />
 					<input type="text" disabled="disabled" id="result">
 					<input type="text" disabled="disabled" id="res_unit">
 				</section>
