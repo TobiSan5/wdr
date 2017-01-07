@@ -8,9 +8,14 @@
  */
 
 function keyify(text_str){
-  return text_str.replace("/\(\)", "_");
+  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "_");
+/*  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/, "_");
+  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/, "_");
+  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/, "_"); */
+  return text_str;
+  
 };
 
 res = keyify("kg/(msPa)");
 
-$("#res_unit".val(res));
+$("#res_unit").val(res);

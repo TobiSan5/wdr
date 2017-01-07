@@ -1,19 +1,23 @@
-var unitArray = {};
-unitArray["m"]["m2sPa_kg"] = 1.95e-10
 function keyify(text_str){
-  return text_str.replace("/\(\)", "_")
+  text_str = text_str.lower()
+  text_str = text_str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "_");
+  return text_str;  
 };
-i_unit = i_unit.replace("/", "_");
-o_unit = o_unit.replace("/", "_");
+
+var unitArray = {};
+unitArray["m"]["m2spa_kg"] = 1.95e-10
 
 
 $(document).ready(function(){
     $("#calc_button").click(function() {
      	var val = +$("#value").val();
      	var i_unit = +$("#inp_unit").val();
-		var o_unit = +$("#out_unit").val();
-		$("#result").val(val);
-		$("#res_unit").val(o_unit);
+		  var o_unit = +$("#out_unit").val();
+      var ikey = keyify(i_unit);
+      var okey = keyify(o_unit);
+    var res = val * unitArray[okey][ikey]
+		$("#result").val(res);
+		$("#res_unit").val(okey);
 		}
 	);
 });		
