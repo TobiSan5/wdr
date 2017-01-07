@@ -4,17 +4,7 @@
 		<title>Unit Converter</title>
 		<link rel="stylesheet" href="style.css">		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script>
-$(document).ready(function(){
-    $("#calc_button").click(function() {
-     	var val = +$("#value").val();
-     	var i_unit = +$("#inp_unit").val();
-		var o_unit = +$("#out_unit").val();
-		$("#result").val(val);
-		}
-	);
-});		
-		</script>
+		<script type="text/javascript" src="unitconverter.js"></script>
 		</head>
 	
 	<body>
@@ -67,8 +57,9 @@ $(document).ready(function(){
 						<option value="kg/(m2sPa)">kg/(m2sPa) (W_p-value)</option>
 						<option value="kg/(msPa)">kg/(msPa) (delta_p-value)</option>
 					</select>
-					<button id="calc_button" type="button">Calculate</button>
-          <input type="text" disabled="disabled" id="result">
+					<button id="calc_button" type="button">Calculate</button><br />
+					<input type="text" disabled="disabled" id="result">
+					<input type="text" disabled="disabled" id="res_unit">
 				</section>
 			</form>
 			
@@ -83,28 +74,3 @@ $(document).ready(function(){
 	</body>	
 
 	
-<!-- No work..
-function funcCalc(jQuery, val, i_unit, o_unit)
-{
-  var value = document.getElementById('value').value;
-  var  inp_unit = document.getElementById('inp_unit').value; 
-  var out_unit = document.getElementById('out_unit').value;
-  var unitArray = {};
-  unitArray.m.m2sPa_kg = 1.95e-10
-  i_unit = i_unit.replace("/", "_");
-  o_unit = o_unit.replace("/", "_");
-  return unitArray[o_unit][i_unit] * 
-}
-
-$(document).ready(function(){
-    $(".calc_button").click(
-    function(){
-          var val = +$(".value").val();
-          var i_unit = +$(".inp_unit").val();
-          var o_unit = +$(".out_unit").val();
-          var res = funcCalc(val, i_unit, o_unit);
-          Alert(res);
-          $("#result").val(res);
-   });
-});
--->
