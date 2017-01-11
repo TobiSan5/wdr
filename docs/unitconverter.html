@@ -3,9 +3,14 @@
 	<head>
 		<title>Unit Converter</title>
 		<link rel="stylesheet" href="style.css">		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="unitconverter.js"></script>
+		<script src="jquery-3.1.1.js"></script>
+		<script src="homebrew.js"></script>
 		<script>
+		
+$(document).ready(function(){
+	$("#calc_form").on("click", ".btn1", runConvert);
+	});
+
 function runConvert() {
 	var p1 = parseFloat($("#value").val());
 	var p2 = $("#inp_unit").val();
@@ -23,11 +28,6 @@ function runConvert() {
 	$("#result").val(res);
 	$("#res_unit").val(p3);
 };
-
-$(document).ready(function(){
-	$("#calc_form").on("click", "#btn1", runConvert);
-	});
-});
 		</script>
 	</head>
 	
@@ -84,7 +84,7 @@ $(document).ready(function(){
 						<option value="kg/(msPa)">kg/(msPa) (delta_p-value)</option>
 						<option value="Metric perm">Metric perm (g/(day*m2*mmHg))</option>
 					</select>
-					<button id="btn1" type="button">Calculate</button><br />
+					<button id="btn1" name="btn1" type="button">Calculate</button><br />
 					<label for="result">Calculated value<br /></label>
 					<input type="text" disabled="disabled" id="result" name="result">
 					<input type="text" disabled="disabled" id="res_unit">
