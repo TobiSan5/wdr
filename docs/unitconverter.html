@@ -7,8 +7,11 @@
 		<script src="homebrew.js"></script>
 		<script>
 		
+$(document).ajaxSuccess(function(event, xhr, settings) {
+	console.log("ajax success: " + xhr.responseText);
+	});
 $(document).ready(function(){
-	$("#calc_form").on("click", ".btn1", runConvert);
+	$("#btn1").on("click", runConvert);
 	});
 
 function runConvert() {
