@@ -1,32 +1,26 @@
-form {
-  margin: 0 auto;
-  width : 100%;
+article {
+width: 100%;
+padding: 5px
+}
 
-  padding: 1em;
-  border : 1px solid #CCC;
-  border-radius: 1em;
+form {
+margin: 5px;
+width : 100%;
+padding: 1em;
+border : 1px solid #CCC;
+border-radius: 1em;
 }
 
 footer{
-
+margin: 0 auto;
+margin-top: 5px;
 clear: both;
-
-height: 200px;
-
+height: 150px;
 width: 100%;
-
 text-align: center;
-
-margin: 0;
-
 font-family: arial;
-
 font-weight: bold;
-
 font-size: 12px;
-
 background-color: #000;
-
 color:#fff;
-
 }
