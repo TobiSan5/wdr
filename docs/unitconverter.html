@@ -7,9 +7,6 @@
 		<script src="homebrew.js"></script>
 		<script>
 		
-$(document).ajaxSuccess(function(event, xhr, settings) {
-	console.log("ajax success: " + xhr.responseText);
-	});
 $(document).ready(function(){
 	$("#btn1").on("click", runConvert);
 	});
@@ -18,7 +15,7 @@ function runConvert() {
 	var p1 = parseFloat($("#value").val());
 	var p2 = $("#inp_unit").val();
 	var p3 = $("#out_unit").val();
-	alert(p1 + " " + p2 + " " + p3);
+	// alert(p1 + " " + p2 + " " + p3); //used for debugging
 	try {
 		var res = p1 * unitArray[keyify(p3)][keyify(p2)];
 	}
