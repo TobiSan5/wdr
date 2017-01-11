@@ -1,4 +1,4 @@
-function keyify(text_s	tr){
+function keyify(text_str){
 	text_str = String(text_str).toLowerCase()
 	text_str = text_str.replace(/([ .*+?^=!:${}()|\[\]\/\\])/g, "_");
 	return text_str;  
